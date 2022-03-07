@@ -19,10 +19,10 @@ const TodoScreen = (props: Props) => {
   return (
     <SafeArea edges="safe" style={_styles.flx1}>
       <TextInput onChangeText={props.setName} placeholder="something" />
-      <TextInput onChangeText={props.setUpdateText} placeholder="update" />
       <TouchableOpacity onPress={props.onInsert}>
         <Text>insert</Text>
       </TouchableOpacity>
+      <TextInput onChangeText={props.setUpdateText} placeholder="update" />
       {props.loading || props.loadingInsert ? (
         <ActivityIndicator size="large" />
       ) : (
