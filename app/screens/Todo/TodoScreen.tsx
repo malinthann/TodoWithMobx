@@ -30,7 +30,7 @@ const TodoScreen = (props: Props) => {
           data={props.todoData}
           renderItem={({ item, index }) => {
             return (
-              <View style={_styles.rows}>
+              <View key={index} style={_styles.rows}>
                 <TouchableOpacity style={_styles.flx1} onPress={() => props.onDelete(item)}>
                   <Text>{item.name}</Text>
                 </TouchableOpacity>

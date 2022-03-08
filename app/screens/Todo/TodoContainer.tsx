@@ -17,7 +17,7 @@ const TodoContainer = (props: Props) => {
     return () => {
       props.todo.onUnsubscribeFetchSnapshotTodoList()
     }
-  }, [])
+  })
 
   const _insertTodo = () => {
     props.todo.insertTodo(name)

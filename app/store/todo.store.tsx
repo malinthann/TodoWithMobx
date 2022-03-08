@@ -20,7 +20,6 @@ export default class TodoStore {
       .get()
       .then((docs) => {
         this.todoDataList = pushToArray(docs)
-        this.loading = false
       })
   }
 
