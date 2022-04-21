@@ -1,12 +1,12 @@
 import { action, observable } from 'mobx'
 import { createId, todoRef } from 'services/data.service'
 import { pushToArray } from 'services/mapping.service'
-import { ITodoOModel } from './model/todo.model'
+import { ITodoModel } from './model/todo.model'
 
 export default class TodoStore {
   @observable loading: boolean = false
 
-  @observable todoDataList: ITodoOModel[] = []
+  @observable todoDataList: ITodoModel[] = []
 
   @observable loadingInsert: boolean = false
 
@@ -44,7 +44,7 @@ export default class TodoStore {
   insertTodo(name: string) {
     this.loadingInsert = true
 
-    const item: ITodoOModel = {
+    const item: ITodoModel = {
       key: createId(),
       name,
     }
@@ -58,7 +58,7 @@ export default class TodoStore {
   }
 
   @action
-  deleteTodo(item: ITodoOModel) {
+  deleteTodo(item: ITodoModel) {
     this.loadingInsert = true
     todoRef()
       .doc(item.key)
@@ -69,10 +69,10 @@ export default class TodoStore {
   }
 
   @action
-  updateTodo(item: ITodoOModel, name: string) {
+  updateTodo(item: ITodoModel, name: string) {
     this.loadingInsert = true
 
-    const updateItem: ITodoOModel = {
+    const updateItem: ITodoModel = {
       key: item.key,
       name,
     }

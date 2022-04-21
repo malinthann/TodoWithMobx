@@ -1,4 +1,4 @@
-import { ITodoOModel } from 'store/model/todo.model'
+import {ITodoModel } from 'store/model/todo.model'
 import TodoStore from 'store/todo.store'
 import * as React from 'react'
 import { inject, observer } from 'mobx-react'
@@ -23,10 +23,10 @@ const TodoTestContainer = (props: Props) => {
     props.todo.insertTodo(name)
   }
 
-  const _onDelete = (item: ITodoOModel) => {
+  const _onDelete = (item: ITodoModel) => {
     props.todo.deleteTodo(item)
   }
-  const _onEdit = (item: ITodoOModel) => {
+  const _onEdit = (item: ITodoModel) => {
     props.todo.updateTodo(item, updateText)
   }
   return (

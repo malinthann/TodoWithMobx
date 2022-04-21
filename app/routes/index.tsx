@@ -9,8 +9,8 @@ const HomeStack = createNativeStackNavigator()
 function HOME_STACK() {
   return (
     <HomeStack.Navigator screenOptions={{ headerShown: false }}>
-      <HomeStack.Screen name="TODO_TEST" component={TodoTestContainer} />
       <HomeStack.Screen name="TODO" component={TodoContainer} />
+      <HomeStack.Screen name="TODO_TEST" component={TodoTestContainer} />
     </HomeStack.Navigator>
   )
 }
